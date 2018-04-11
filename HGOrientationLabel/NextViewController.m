@@ -1,13 +1,13 @@
 //
 //  NextViewController.m
-//  ARUILabelTextAlign
+//  HGOrientationLabel
 //
-//  Created by UIDesigner on 2018/4/11.
-//  Copyright © 2018年 UIDesigner. All rights reserved.
+//  Created by Arch on 2018/4/11.
+//  Copyright © 2018年 Arch. All rights reserved.
 //
 
 #import "NextViewController.h"
-#import "ARAlignLabel.h"
+#import "HGOrientationLabel.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 
@@ -25,7 +25,7 @@
         //富文本底部对齐
         [self attributedTextAgainOfBottom];
     }else {
-        ARAlignLabel *label = [[ARAlignLabel alloc] initWithFrame:CGRectMake(kScreenWidth/2.0 - 150, 300, 300, 80)];
+        HGOrientationLabel *label = [[HGOrientationLabel alloc] initWithFrame:CGRectMake(kScreenWidth/2.0 - 150, 300, 300, 80)];
         label.backgroundColor = [UIColor orangeColor];
         label.textColor = [UIColor blackColor];
         label.font = [UIFont systemFontOfSize:18];
@@ -35,47 +35,47 @@
         
         switch (_index) {
             case 0:
-                [label textAlign:^(ARMaker *make) {
+                [label textAlign:^(HGMaker *make) {
                     make.addAlignType(textAlignType_left).addAlignType(textAlignType_top);
                 }];
                 break;
             case 1:
-                [label textAlign:^(ARMaker *make) {
+                [label textAlign:^(HGMaker *make) {
                     make.addAlignType(textAlignType_left).addAlignType(textAlignType_center);
                 }];
                 break;
             case 2:
-                [label textAlign:^(ARMaker *make) {
+                [label textAlign:^(HGMaker *make) {
                     make.addAlignType(textAlignType_left).addAlignType(textAlignType_bottom);
                 }];
                 break;
             case 3:
-                [label textAlign:^(ARMaker *make) {
+                [label textAlign:^(HGMaker *make) {
                     make.addAlignType(textAlignType_center).addAlignType(textAlignType_top);
                 }];
                 break;
             case 4:
-                [label textAlign:^(ARMaker *make) {
+                [label textAlign:^(HGMaker *make) {
                     make.addAlignType(textAlignType_center);
                 }];
                 break;
             case 5:
-                [label textAlign:^(ARMaker *make) {
+                [label textAlign:^(HGMaker *make) {
                     make.addAlignType(textAlignType_center).addAlignType(textAlignType_bottom);
                 }];
                 break;
             case 6:
-                [label textAlign:^(ARMaker *make) {
+                [label textAlign:^(HGMaker *make) {
                     make.addAlignType(textAlignType_right).addAlignType(textAlignType_top);
                 }];
                 break;
             case 7:
-                [label textAlign:^(ARMaker *make) {
+                [label textAlign:^(HGMaker *make) {
                     make.addAlignType(textAlignType_right).addAlignType(textAlignType_center);
                 }];
                 break;
             case 8:
-                [label textAlign:^(ARMaker *make) {
+                [label textAlign:^(HGMaker *make) {
                     make.addAlignType(textAlignType_right).addAlignType(textAlignType_bottom);
                 }];
                 break;
@@ -90,13 +90,13 @@
     
     CGFloat space = 10.0;
     
-    ARAlignLabel *leftLB = [[ARAlignLabel alloc] initWithFrame:CGRectMake(20, 200, kScreenWidth/2.0 - 20 - space/2.0, 80)];
+    HGOrientationLabel *leftLB = [[HGOrientationLabel alloc] initWithFrame:CGRectMake(20, 200, kScreenWidth/2.0 - 20 - space/2.0, 80)];
     leftLB.backgroundColor = [UIColor lightGrayColor];
     leftLB.textColor = [UIColor blackColor];
     leftLB.numberOfLines = 1;
     [self.view addSubview:leftLB];
     //右下
-    [leftLB textAlign:^(ARMaker *make) {
+    [leftLB textAlign:^(HGMaker *make) {
         make.addAlignType(textAlignType_center);
     }];
     
@@ -110,13 +110,13 @@
     
     
     //对齐之后
-    ARAlignLabel *rightLB = [[ARAlignLabel alloc] initWithFrame:CGRectMake(kScreenWidth/2.0 + space/2.0, 200, leftLB.frame.size.width, 80)];
+    HGOrientationLabel *rightLB = [[HGOrientationLabel alloc] initWithFrame:CGRectMake(kScreenWidth/2.0 + space/2.0, 200, leftLB.frame.size.width, 80)];
     rightLB.backgroundColor = [UIColor lightGrayColor];
     rightLB.textColor = [UIColor blackColor];
     rightLB.numberOfLines = 1;
     [self.view addSubview:rightLB];
     //左下
-    [rightLB textAlign:^(ARMaker *make) {
+    [rightLB textAlign:^(HGMaker *make) {
         make.addAlignType(textAlignType_center);
     }];
     

@@ -1,13 +1,13 @@
 //
-//  ARAlignLabel.h
-//  ARUILabelTextAlign
+//  HGOrientationLabel.h
+//  HGOrientationLabel
 //
-//  Created by UIDesigner on 2018/4/11.
-//  Copyright © 2018年 UIDesigner. All rights reserved.
+//  Created by Arch on 2018/4/11.
+//  Copyright © 2018年 Arch. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-@class ARMaker;
+@class HGMaker;
 
 typedef NS_ENUM(NSUInteger,textAlignType)
 {
@@ -18,20 +18,20 @@ typedef NS_ENUM(NSUInteger,textAlignType)
     textAlignType_center      // 水平/垂直对齐（默认中心对齐）
 };
 
-@interface ARAlignLabel : UILabel
+@interface HGOrientationLabel : UILabel
 
 /**
  *  根据对齐方式进行文本对齐
  *
  *  @param alignType 对齐block
  */
-- (void)textAlign:(void(^)(ARMaker *make))alignType;
+- (void)textAlign:(void(^)(HGMaker *make))alignType;
 
 @end
 
 
 //工具类
-@interface ARMaker : NSObject
+@interface HGMaker : NSObject
 
 /* 存放对齐样式 */
 @property(nonatomic, strong) NSMutableArray *typeArray;
@@ -39,6 +39,6 @@ typedef NS_ENUM(NSUInteger,textAlignType)
 /**
  *  添加对齐样式
  */
-- (ARMaker *(^)(textAlignType type))addAlignType;
+- (HGMaker *(^)(textAlignType type))addAlignType;
 
 @end

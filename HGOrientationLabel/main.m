@@ -1,9 +1,9 @@
 //
 //  main.m
-//  ARUILabelTextAlign
+//  HGOrientationLabel
 //
-//  Created by UIDesigner on 2018/4/11.
-//  Copyright © 2018年 UIDesigner. All rights reserved.
+//  Created by Arch on 2018/4/11.
+//  Copyright © 2018年 Arch. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

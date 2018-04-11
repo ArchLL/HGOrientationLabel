@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ARUILabelTextAlign.xcodeproj">
+      location = "self:/Users/arch/Documents/ARUILabelTextAlign/HGOrientationLabel.xcodeproj">
    </FileRef>
 </Workspace>

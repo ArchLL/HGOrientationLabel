@@ -1,17 +1,17 @@
 //
-//  ARAlignLabel.m
-//  ARUILabelTextAlign
+//  HGOrientationLabel.m
+//  HGOrientationLabel
 //
-//  Created by UIDesigner on 2018/4/11.
-//  Copyright © 2018年 UIDesigner. All rights reserved.
+//  Created by Arch on 2018/4/11.
+//  Copyright © 2018年 Arch. All rights reserved.
 //
 
-#import "ARAlignLabel.h"
+#import "HGOrientationLabel.h"
 
-@interface ARAlignLabel ()
+@interface HGOrientationLabel ()
 
 /* 对齐方式 */
-@property(nonatomic, strong) NSArray *typeArray;
+@property(nonatomic, strong) NSArray * typeArray;
 //上
 @property(nonatomic, assign) BOOL hasTop;
 //左
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation ARAlignLabel
+@implementation HGOrientationLabel
 
 - (CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)numberOfLines {
     CGRect textRect = [super textRectForBounds:bounds limitedToNumberOfLines:numberOfLines];
@@ -81,9 +81,8 @@
     [super drawTextInRect:actualRect];
 }
 
-- (void)textAlign:(void(^)(ARMaker *make))alignType
-{
-    ARMaker *make = [[ARMaker alloc]init];
+- (void)textAlign:(void(^)(HGMaker *make))alignType {
+    HGMaker *make = [[HGMaker alloc]init];
     alignType(make);
     self.typeArray = make.typeArray;
 }
@@ -91,10 +90,9 @@
 @end
 
 //工具类
-@implementation ARMaker
+@implementation HGMaker
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         self.typeArray = [NSMutableArray array];
@@ -102,8 +100,7 @@
     return self;
 }
 
-- (ARMaker *(^)(enum textAlignType type))addAlignType
-{
+- (HGMaker *(^)(enum textAlignType type))addAlignType {
     __weak typeof (self) weakSelf = self;
     return ^(enum textAlignType type)
     {
